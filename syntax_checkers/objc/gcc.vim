@@ -81,9 +81,9 @@ endif
 
 function! SyntaxCheckers_objc_gcc_IsAvailable()
     return executable(g:syntastic_objc_checker)
-endif
+endfunction
 
-function! SyntaxCheckers_objc_GetLocList()
+function! SyntaxCheckers_objc_gcc_GetLocList()
     let makeprg = g:syntastic_objc_checker . ' -ObjC -fsyntax-only '
     let errorformat = '%-G%f:%s:,%-G%f:%l: %#error: %#(Each undeclared '.
                \ 'identifier is reported only%.%#,%-G%f:%l: %#error: %#for '.
